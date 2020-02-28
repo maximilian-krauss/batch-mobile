@@ -21,18 +21,18 @@ for await (const batchOfItems of getBatchedIterableFromCursor(cursor)) {
 ### Mongo example
 
 ```js
+const { MongoClient } = require('mongodb')
 const client = await (new MongoClient(process.env.MONGO_URI)).connect()
 
-  try {
-    const collection = client.db('application').collection('collection')
-    const cursor = vehicleCollection
-      .find({ foo: 'bar' })
+try {
+  const collection = client.db('application').collection('collection')
+  const cursor = collection
+    .find({ foo: 'bar' })
 
-    for await (const batch of getBatchedIterableFromCursor(cursor, 1000)) {
-      await processItemsFrom(batch)
-    }
-  } finally {
-    await client.close(true)
+  for await (const batch of getBatchedIterableFromCursor(cursor, 1000)) {
+    await processItemsFrom(batch)
   }
+} finally {
+  await client.close(true)
 }
 ```
