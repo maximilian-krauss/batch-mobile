@@ -10,7 +10,7 @@ describe('batched-mongo-cursor', () => {
     it('should throw if no cursor has been passed', async () => {
       expect.assertions(1)
       try {
-        getBatchedIterableFromCursor()
+        await getBatchedIterableFromCursor().next()
       } catch (error) {
         expect(error.message).toMatch('Invalid argument: cursor needs to be defined')
       }
@@ -19,7 +19,7 @@ describe('batched-mongo-cursor', () => {
     it('should throw if invalid batchSize has been provided (null)', async () => {
       expect.assertions(1)
       try {
-        getBatchedIterableFromCursor(fakedCursor, null)
+        await getBatchedIterableFromCursor(fakedCursor, null).next()
       } catch (error) {
         expect(error.message).toMatch('Invalid argument: batchSize needs to be defined and greater than zero')
       }
@@ -28,7 +28,7 @@ describe('batched-mongo-cursor', () => {
     it('should throw if invalid batchSize has been provided (0)', async () => {
       expect.assertions(1)
       try {
-        getBatchedIterableFromCursor(fakedCursor, 0)
+        await getBatchedIterableFromCursor(fakedCursor, 0).next()
       } catch (error) {
         expect(error.message).toMatch('Invalid argument: batchSize needs to be defined and greater than zero')
       }
@@ -37,7 +37,7 @@ describe('batched-mongo-cursor', () => {
     it('should throw if invalid batchSize has been provided (-1)', async () => {
       expect.assertions(1)
       try {
-        getBatchedIterableFromCursor(fakedCursor, -1)
+        await getBatchedIterableFromCursor(fakedCursor, -1).next()
       } catch (error) {
         expect(error.message).toMatch('Invalid argument: batchSize needs to be defined and greater than zero')
       }
