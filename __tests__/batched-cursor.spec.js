@@ -92,7 +92,6 @@ describe('batched-mongo-cursor', () => {
       let calls = 0
 
       for await (const batch of getBatchedIterableFromCursor(fakedCursor, 2)) {
-        console.log(batch)
         results = [...results, ...batch]
         calls++
       }
