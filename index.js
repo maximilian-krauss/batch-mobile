@@ -1,5 +1,3 @@
-const { getBatchedIterableFromCursor } = require('./lib/batched-cursor')
+const { getBatchedIterableFromCursor } = require('./lib/batched-cursor').default
 
-module.exports = {
-  getBatchedIterableFromCursor
-}
+module.exports = { getBatchedIterableFromCursor }
