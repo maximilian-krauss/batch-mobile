@@ -1,6 +1,6 @@
 {
   "name": "batch-mobile",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Asynchronous batched iterable for (mongo) cursors",
   "main": "index.js",
   "scripts": {
