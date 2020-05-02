@@ -27,7 +27,7 @@
   "homepage": "https://github.com/maximilian-krauss/batch-mobile#readme",
   "devDependencies": {
     "@types/jest": "25.2.1",
-    "jest": "25.5.2",
+    "jest": "25.5.3",
     "standard": "14.3.3"
   },
   "standard": {
