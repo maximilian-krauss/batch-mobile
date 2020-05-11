@@ -28,7 +28,7 @@
   "devDependencies": {
     "@types/jest": "25.2.1",
     "jest": "26.0.1",
-    "standard": "14.3.3"
+    "standard": "14.3.4"
   },
   "standard": {
     "env": [
